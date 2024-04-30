@@ -1,0 +1,37 @@
+{% extends "_base.html" %}
+
+{% block title %}{{ section.title }}{% endblock title %}
+
+{% block content %}
+
+<h1 class="title">{{ section.title }}</h1>
+
+<main class="blog__container">
+  <ul class="blog__list">
+    <!-- If you are using pagination, paginator.pages will be empty. You need to use the paginator object -->  
+    {% for page in paginator.pages %}
+      <li class="blog__list--item">
+        <a href="{{ page.permalink }}">
+          <span>{{ page.title }}</span>
+          <span>{{ page.date }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <nav class="blog__pagination">
+    {% if paginator.previous %}
+      <a class="blog__pagination--previous" href="{{ paginator.previous }}">&lt; prev</a>
+    {% else %}
+      <a class="blog__pagination--previous disabled" href="#">&lt; prev</a>
+    {% endif %}
+
+    {% if paginator.next %}
+      <a class="blog__pagination--next" href="{{ paginator.next }}">next &gt;</a>
+    {% else %}
+      <a class="blog__pagination--next disabled" href="#">next &gt;</a>
+    {% endif %}
+  </nav>
+</main>
+
+{% endblock content %}

@@ -1,0 +1,10 @@
+<header>
+  <nav>
+    <ul>
+      {% set site_sections = config.extra.sections %}
+      {% for site in site_sections %}
+      <li><a href="{{ site.path }}">{{ site.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
