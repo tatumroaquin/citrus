@@ -25,9 +25,17 @@ build_search_index = true
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
+id = "tatumroaquin"
+
+bio = "Answers always precede questions"
+
 sections = [
   { name = "blog", path = "/blog" },
 ]
 
-copyright = "©2023 Tatum Roaquin"
+socials = [
+  { name = "GitHub", icon = "github.svg", url = "https://github.com/tatumroaquin" },
+  { name = "Leetcode", icon = "leetcode.svg", url = "https://leetcode.com/tatumroaquin" },
+  { name = "LinkedIn", icon = "linkedin.svg", url = "https://www.linkedin.com/in/tatumroaquin" },
+  { name = "Frontend Mentor", icon = "frontend-mentor.svg", url = "https://www.frontendmentor.io/profile/tatumroaquin" },
+]
