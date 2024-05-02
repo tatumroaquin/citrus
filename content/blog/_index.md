@@ -3,6 +3,6 @@ title           = "tatum::blog"
 sort_by         = "date"
 template        = "blog.html"
 page_template   = "post.html"
-paginate_by     = 3
+paginate_by     = 25
 order_by        = "date"
 +++
