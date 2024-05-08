@@ -1,14 +1,67 @@
 {% extends "_base.html" %}
 
+{% block page %}post{% endblock %}
+
+{% block title %}{{ page.title }}{% endblock title %}
+
 {% block content %}
 
-<h1 class="post__title"> {{ page.title }} </h1>
+{% include "_header.html" %}
 
-<div class="post__date">
-  <p class="post__date--created">Created: {{ page.date }}</p>
-  <p class="post__date--updated">Updated: {{ page.updated }}</p>
+<div class="post__container">
+  <main class="post__content">
+    {% if page.extra.toc %}
+    <aside class="post-toc">
+      <!-- <nav class="post-toc__nav"> -->
+        <ul class="post-toc__list">
+          {% for entry in page.toc %}
+          <li class="post-toc__item">
+            <a class="post-toc__link" href="#{{ entry.id }}">{{ entry.title }}</a>
+            {% if entry.children %}
+              <ul class="post-toc__list">
+                {% for child in entry.children %}
+                <li class="post-toc__item">
+                  <a class="post-toc__link" href="#{{ child.id }}">{{ child.title }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      <!-- </nav> -->
+    </aside>
+    {% endif %}
+
+    <article class="post__article">
+      <h1 class="post__title">{{ page.title }}</h1>
+
+      <div class="post__meta">
+        <span class="post__date">{{ page.date | date }}</span>
+        {% if page.updated %}
+          &nbsp; &vert; &nbsp;
+          <span class="post__update">Update &nbsp; {{ page.updated | date }}</span>
+        {% endif %}
+        {% if page.taxonomies.tags %}
+        <div class="post__tags">
+          {% for tag in page.taxonomies.tags %}
+          {%- set tag_slug = tag | slugify -%}
+            <span class="post__tags-item">
+              <a href="/tags/{{tag_slug}}">{{tag_slug}}</a>
+            </span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      {{ page.content | safe }}
+
+    </article>
+
+    <aside class="post__padding"></aside>
+  </main>
 </div>
 
-{{ page.content | safe }}
+{% include "_footer.html" %}
 
 {% endblock content %}
