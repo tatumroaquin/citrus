@@ -1,47 +1,47 @@
 {% extends "_base.html" %}
 
-{% block page %}homepage{% endblock page%}
+{% block page %}home{% endblock page%}
 
 {% block title %}{{ section.title }}{% endblock title %}
 
 {% block content %}
 
-<main class="homepage__container">
-  <section class="profile">
-    <img class="profile__avatar" src="/icon/avatar.jpg" alt="Tatum's avatar image">
-    <div class="profile__info">
+<main class="home__container">
+  <section class="home-profile">
+    <img class="home-profile__avatar" src="/icon/avatar.jpg" alt="Tatum's avatar image">
+    <div class="home-profile__info">
       <div>
-        <span class="profile__info-name">{{ config.author }}</span>
-        <span class="profile__info-handle">@{{ config.extra.id }}</span>
+        <span class="home-profile__info-name">{{ config.author }}</span>
+        <span class="home-profile__info-handle">@{{ config.extra.id }}</span>
       </div>
-      <p class="profile__info-bio">{{ config.extra.bio }}</p>
+      <p class="home-profile__info-bio">{{ config.extra.bio }}</p>
     </div>
   </section>
 
-  <section class="links">
-    <div class="links__sections">
+  <section class="home-nav">
+    <div class="home-nav__sections">
       {% set sections = config.extra.sections %}
       {% for section in sections %}
-      <a class="links__sections-item" href="{{ section.path }}">{{ section.name }}</a>
+      <a class="home-nav__sections-item" href="{{ section.path }}">{{ section.name }}</a>
       {% endfor %}
     </div>
-    <div class="links__social">
+    <div class="home-nav__social">
       {% set socials = config.extra.socials %}
       {% for social in socials %}
       {% set social_icon = load_data(path="static/icon/" ~ social.icon) %}
-      <a class="links__social-icon" href="{{ social.url }}" target="_blank" rel="noreferrer noopener">
+      <a class="home-nav__social-icon" href="{{ social.url }}" target="_blank" rel="noreferrer noopener">
         {{ social_icon | safe }}
       </a>
       {% endfor %}
       {% set moon_icon = load_data(path="static/icon/moon.svg") %}
       {% set sun_icon = load_data(path="static/icon/sun.svg") %}
     </div>
-    <button class="links__theme-toggle" id="theme-toggle" data-moon-icon="{{ moon_icon }}" data-sun-icon="{{ sun_icon }}">
+    <button class="home-nav__theme-toggle" id="theme-toggle" data-moon-icon="{{ moon_icon }}" data-sun-icon="{{ sun_icon }}">
       {{ moon_icon | safe }}
     </button>
   </section>
 
-  <section class="brief">
+  <section class="home__brief">
     {{ section.content | trim | safe }}
   </section>
 </main>
