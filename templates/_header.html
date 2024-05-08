@@ -1,10 +1,23 @@
 <header>
-  <nav>
-    <ul>
-      {% set site_sections = config.extra.sections %}
-      {% for site in site_sections %}
-      <li><a href="{{ site.path }}">{{ site.name }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
+  <div class="top-nav__container">
+    <nav class="top-nav">
+      <a class="top-nav__brand" href="/">{{ config.extra.id }}</a>
+      <span>::</span>
+      <span>[</span>
+      <ul class="top-nav__list">
+        {% set sections = config.extra.sections %}
+        {% for section in sections %}
+          <li class="top-nav__item">
+            <a class="top-nav__link" href="{{ section.path }}">
+              {{ section.name }}
+            </a>
+          </li>
+          {% if not loop.last %}
+            <span class="top-nav__divider">,</span >
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <span>]</span>
+    </nav>
+  </div>
 </header>
