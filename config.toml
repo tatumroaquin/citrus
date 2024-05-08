@@ -19,10 +19,17 @@ author = "Tatum Roaquin"
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+taxonomies = [ { name = "tags" } ]
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a supported theme
 highlight_code = true
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
 
 [extra]
 id = "tatumroaquin"
@@ -31,11 +38,13 @@ bio = "Answers always precede questions"
 
 sections = [
   { name = "blog", path = "/blog" },
+  { name = "code", path = "/code" },
+  { name = "tags", path = "/tags" },
 ]
 
 socials = [
   { name = "GitHub", icon = "github.svg", url = "https://github.com/tatumroaquin" },
-  { name = "Leetcode", icon = "leetcode.svg", url = "https://leetcode.com/tatumroaquin" },
+  { name = "Leetcode", icon = "leetcode.svg", url = "https://leetcode.com/u/tatumroaquin" },
   { name = "LinkedIn", icon = "linkedin.svg", url = "https://www.linkedin.com/in/tatumroaquin" },
   { name = "Frontend Mentor", icon = "frontend-mentor.svg", url = "https://www.frontendmentor.io/profile/tatumroaquin" },
 ]
