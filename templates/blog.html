@@ -1,7 +1,5 @@
 {% extends "_base.html" %}
 
-{% block page %}blog{% endblock %}
-
 {% block title %}
   {{ section.title }}
 {% endblock title %}
@@ -9,7 +7,8 @@
 {% block content %}
 
 {% include "_header.html" %}
-<div class="blog__container">
+<div class="blog">
+  <h2 class="blog__title">Blog Posts</h2>
   <ul class="blog__list">
     {% for page in paginator.pages %}
       <li class="blog__item">
