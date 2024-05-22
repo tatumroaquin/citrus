@@ -1,3 +1,12 @@
 <footer>
-  <div class="copyright">© 2024 Tatum Roaquin</div>
+  <div class="footer__copyright">© 2024 Tatum Roaquin</div>
+  <div class="footer__socials">
+    {% set socials = config.extra.socials %}
+    {% for social in socials %}
+    {% set social_icon = load_data(path="static/icon/" ~ social.icon) %}
+    <a class="footer__socials-icon" href="{{ social.url }}" target="_blank" rel="noreferrer noopener">
+      {{ social_icon | safe }}
+    </a>
+    {% endfor %}
+  </div>
 </footer>

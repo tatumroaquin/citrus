@@ -2,7 +2,7 @@
   <div class="top-nav">
     <nav class="top-nav__content">
       <a class="top-nav__brand" href="/">{{ config.extra.id }}</a>
-      <span>::</span>
+      <span>-</span>
       <span>[</span>
       <ul class="top-nav__list">
         {% set sections = config.extra.sections %}
@@ -19,5 +19,9 @@
       </ul>
       <span>]</span>
     </nav>
+    {% set toc_icon = load_data(path="static/icon/toc.svg") %}
+    <button class="toc-toggler" onclick="toggleToc()">
+      {{ toc_icon | safe }}
+    </button>
   </div>
 </header>

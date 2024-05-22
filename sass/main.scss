@@ -1,4 +1,9 @@
 // Colorscheme
+
+$content-width: 720px;
+$tablet-width: 1024px;
+$mobile-width: 430px;
+
 :root {
   --bg-color: white;
   --text-color: black;
@@ -25,7 +30,6 @@
 
 // Typography
 :root {
-  --content-width: 720px;
   --header-height: 48px;
   --footer-height: 32px;
 
@@ -79,7 +83,7 @@ header {
 }
 
 footer {
-  width: var(--content-width);
+  width: $content-width;
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
@@ -87,14 +91,19 @@ footer {
 
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $content-width) {
+    width: 100%;
+    padding: 0.5em 1em;
+  }
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .show {
-  display: initial;
+  display: initial !important;
 }
 
 .disabled {
@@ -103,7 +112,7 @@ footer {
 }
 
 .blog {
-  width: var(--content-width);
+  width: $content-width;
   height: 100%;
 
   margin-top: var(--header-height);
@@ -142,14 +151,25 @@ footer {
     display: flex;
     justify-content: space-between;
   }
+
+  @media (max-width: $content-width) {
+    width: 100%;
+    padding: 0 1em;
+  }
 }
 
 .home {
   border: 1px solid black;
   border-radius: 10px;
   padding: 1em;
-  width: var(--content-width);
+  width: $content-width;
   margin: auto;
+
+  @media (max-width: $content-width) {
+    width: 100%;
+    margin-top: var(--header-height);
+    border: none;
+  }
 
   &-profile {
     display: flex;
@@ -229,7 +249,10 @@ footer {
 }
 
 .top-nav {
-  width: var(--content-width);
+  width: $content-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   &__content {
     display: flex;
@@ -261,6 +284,11 @@ footer {
   &__divider {
     margin-right: 0.5em;
   }
+
+  @media (max-width: $content-width) {
+    width: 100%;
+    padding: 0 1em;
+  }
 }
 
 .post {
@@ -272,17 +300,29 @@ footer {
   }
 
   &-toc {
-    height: min-content;
-    max-width: calc((100% - var(--content-width)) / 2);
+    height: 80svh;
+    width: calc((100% - $content-width) / 2);
 
     position: sticky;
     margin-top: 5em;
     top: var(--header-height);
     font-size: var(--aside-font-size);
 
-    max-height: 80svh;
     overflow-y: scroll;
     scrollbar-width: none;
+
+    @media (max-width: $tablet-width) {
+      display: none;
+      width: 20em;
+      height: calc(100svh - var(--header-height));
+      background: var(--bg-color);
+      margin-top: var(--header-height);
+
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      right: 0;
+    }
 
     // &__nav {
     //   max-height: 90svh;
@@ -309,10 +349,6 @@ footer {
         color: var(--toc-link-hover-color);
       }
     }
-
-    @media (max-width: 1024px) {
-      display: none;
-    }
   }
 
   &__title {
@@ -320,8 +356,7 @@ footer {
   }
 
   &__article {
-    width: var(--content-width);
-
+    width: $content-width;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -329,6 +364,10 @@ footer {
     .zola-anchor {
       visibility: hidden;
       margin-left: 0.5em;
+      color: var(--toc-link-color);
+      &:hover {
+        color: var(--toc-link-hover-color);
+      }
     }
 
     h1,
@@ -342,14 +381,23 @@ footer {
         border-bottom: var(--underline-hover-color);
       }
     }
+
+    @media (max-width: $content-width) {
+      padding: 0 1em;
+    }
   }
 
   &__padding {
-    width: calc((100% - var(--content-width)) / 2);
+    width: calc((100% - $content-width) / 2);
   }
 
   &__meta {
     display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: $mobile-width) {
+      flex-direction: column;
+    }
   }
 
   &__tags {
@@ -360,14 +408,24 @@ footer {
         color: var(--link-hover-color);
       }
     }
+
+    @media (max-width: $mobile-width) {
+      margin-left: 0;
+    }
   }
 }
 
 .tags {
-  margin: 0 auto;
   margin-top: var(--header-height);
+  margin-left: auto;
+  margin-right: auto;
 
-  width: var(--content-width);
+  width: $content-width;
+
+  @media (max-width: $content-width) {
+    background: orange;
+    width: 100%;
+  }
 
   &__title {
     text-align: center;
@@ -389,6 +447,44 @@ footer {
     &:hover {
       color: var(--link-hover-color);
       border-bottom: var(--underline-hover-color);
+    }
+  }
+}
+
+.toc-toggler {
+  display: none;
+  border: none;
+  color: var(--icon-color);
+  width: var(--header-font-size);
+  height: var(--header-font-size);
+  background: transparent;
+
+  &:hover {
+    color: var(--toc-link-hover-color);
+  }
+
+  &.active {
+    color: var(--toc-link-hover-color);
+  }
+
+  @media (max-width: $tablet-width) {
+    display: initial;
+  }
+}
+
+.footer {
+  &__socials {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    margin-left: auto;
+
+    &-icon {
+      color: var(--icon-color);
+      svg {
+        width: var(--icon-size);
+        height: var(--icon-size);
+      }
     }
   }
 }

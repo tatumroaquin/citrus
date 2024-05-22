@@ -33,11 +33,14 @@
     <article class="post__article">
       <h1 class="post__title">{{ page.title }}</h1>
       <div class="post__meta">
-        <span class="post__date">{{ page.date | date }}</span>
-        {% if page.updated %}
-        &nbsp; &vert; &nbsp;
-        <span class="post__update">Update &nbsp;{{ page.updated | date }}</span>
-        {% endif %}
+        <span class="post__date">
+          {{ page.date | date }}
+          {% if page.updated %}
+            &nbsp;&vert;&nbsp;
+            Update &nbsp;{{ page.updated | date }}
+          {% endif %}
+        </span>
+
         {% if page.taxonomies.tags %}
         <div class="post__tags">
           {% for tag in page.taxonomies.tags %}
