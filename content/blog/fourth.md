@@ -2,6 +2,11 @@
 title = "My fourth post"
 date = 2024-04-04
 updated = 2024-04-04
+[taxonomies]
+tags = [
+    'lorem',
+    'ipsum',
+]
 +++
 
 # Intro Heading

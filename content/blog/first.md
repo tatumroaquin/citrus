@@ -1,6 +1,11 @@
 +++
 title = "My first post"
 date = 2024-04-01
+[taxonomies]
+tags = [
+    'lorem',
+    'ipsum',
+]
 +++
 
 ## Corner shop
