@@ -24,6 +24,11 @@ taxonomies = [ { name = "tags" } ]
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a supported theme
+highlight_themes_css = [
+  { theme = "gruvbox-dark", filename = "syntax-theme-dark.css" },
+  { theme = "OneHalfLight", filename = "syntax-theme-light.css" },
+]
+highlight_theme = "css"
 highlight_code = true
 
 [slugify]
