@@ -34,7 +34,12 @@
       {% set moon_icon = load_data(path="static/icon/moon.svg") %}
       {% set sun_icon = load_data(path="static/icon/sun.svg") %}
     </div>
-    <button class="home-nav__theme-toggle" id="theme-toggle" data-moon-icon="{{ moon_icon }}" data-sun-icon="{{ sun_icon }}">
+    <button 
+      id="theme-toggle"
+      class="home-nav__theme-toggle"
+      data-moon-icon="{{ moon_icon }}"
+      data-sun-icon="{{ sun_icon }}"
+    >
       {{ moon_icon | safe }}
     </button>
   </section>
