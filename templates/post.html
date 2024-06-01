@@ -1,6 +1,12 @@
 {% extends "_base.html" %}
 
+{% import "macros/toc-list.html" as macros %}
+
 {% block title %}{{ page.title }}{% endblock title %}
+
+{% block head %}
+  <link id="syntax-theme" rel="stylesheet" href="/syntax-theme-light.css" />
+{% endblock head %}
 
 {% block content %}
 
@@ -9,26 +15,9 @@
 <div class="post">
   <main class="post__content">
     {% if page.extra.toc %}
-    <aside class="post-toc">
-      <!-- <nav class="post-toc__nav"> -->
-        <ul class="post-toc__list">
-          {% for entry in page.toc %}
-          <li class="post-toc__item">
-            <a class="post-toc__link" href="#{{ entry.id }}">{{ entry.title }}</a>
-            {% if entry.children %}
-              <ul class="post-toc__list">
-                {% for child in entry.children %}
-                <li class="post-toc__item">
-                  <a class="post-toc__link" href="#{{ child.id }}">{{ child.title }}</a>
-                </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-      <!-- </nav> -->
-    </aside>
+      <aside class="post-toc">
+        {{ macros::toc_list(toc=page.toc) }}
+      </aside>
     {% endif %}
     <article class="post__article">
       <h1 class="post__title">{{ page.title }}</h1>

@@ -1,0 +1,16 @@
+{% macro toc_item(item) %}
+  <li class="post-toc__item">
+    <a class="post-toc__link" href="#{{ item.id }}">{{ item.title }}</a>
+  </li>
+{% endmacro toc_item %}
+
+{% macro toc_list(toc) %}
+  <ul class="post-toc__list">
+    {% for item in toc %}
+      {{ self::toc_item(item=item) }}
+      {% if item.children %}
+        {{ self::toc_list(toc=item.children) }}
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endmacro toc_list %}
