@@ -56,4 +56,12 @@ function initThemeToggle() {
   }
 }
 
+// https://sparanoid.com/work/lightense-images/
+function initImageZoom() {
+  window.addEventListener('load', () => Lightense('.post__article img', {
+    background: 'rgba(35, 38, 39, 0.6)'
+  }));
+}
+
 initThemeToggle();
+initImageZoom();
