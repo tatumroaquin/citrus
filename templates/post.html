@@ -12,6 +12,14 @@
 
 {% include "_header.html" %}
 
+{% set copy_icon  = load_data(path="static/icon/copy.svg") %}
+{% set check_icon = load_data(path="static/icon/check.svg") %}
+
+<div class='clipboard-icons'
+    data-copy-icon="{{ copy_icon }}"
+    data-check-icon="{{ check_icon }}"
+></div>
+
 <div class="post">
   <main class="post__content">
     {% if page.extra.toc %}

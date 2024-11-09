@@ -63,5 +63,52 @@ function initImageZoom() {
   }));
 }
 
+function populateCopyButtons() {
+  const codeBlocks = document.querySelectorAll('pre');
+  const clipboardIcons = document.querySelector('.clipboard-icons');
+
+  // early return when copy assets does not exist
+  if (!clipboardIcons) return;
+
+  const { copyIcon, checkIcon } = clipboardIcons.dataset;
+
+  // generate buttons for each codeblock
+  for (const block of codeBlocks) {
+
+    const button = document.createElement('button');
+    button.className = 'copy--on'
+    button.ariaLabel = 'copy'
+    button.innerHTML = copyIcon;
+
+    button.addEventListener('click', async () => await copyAction(block, button, copyIcon, checkIcon));
+
+    const container = document.createElement('div');
+    container.className = 'codeblock';
+    container.appendChild(block.cloneNode(true));
+    container.appendChild(button);
+
+    block.replaceWith(container);
+  }
+}
+
+async function copyAction(block, button, copyIcon, checkIcon) {
+  await navigator.clipboard.writeText(block.textContent);
+  button.innerHTML = checkIcon;
+  button.classList.add('copy--off');
+
+  const copyHandler = async () => {
+    await copyAction(block, button, copyIcon, checkIcon);
+  }
+
+  button.removeEventListener('click', copyHandler);
+
+  setTimeout(() => {
+    button.innerHTML = copyIcon;
+    button.classList.remove('copy--off');
+    button.addEventListener('click', copyHandler);
+  },1500);
+}
+
 initThemeToggle();
 initImageZoom();
+populateCopyButtons();
