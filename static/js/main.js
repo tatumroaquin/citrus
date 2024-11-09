@@ -12,8 +12,7 @@ function setTheme(theme) {
   const { sunIcon, moonIcon } = themeToggler.dataset;
 
   // switch out syntax highlight theme
-  if (themeCssElement)
-    themeCssElement.href = `/syntax-theme-${theme}.css`;
+  if (themeCssElement) themeCssElement.href = `/syntax-theme-${theme}.css`;
 
   if (theme == "dark") {
     document.body.classList.add("dark");
@@ -58,14 +57,16 @@ function initThemeToggle() {
 
 // https://sparanoid.com/work/lightense-images/
 function initImageZoom() {
-  window.addEventListener('load', () => Lightense('.post__article img', {
-    background: 'rgba(35, 38, 39, 0.6)'
-  }));
+  window.addEventListener("load", () =>
+    Lightense(".post__article img", {
+      background: "rgba(35, 38, 39, 0.6)",
+    }),
+  );
 }
 
 function populateCopyButtons() {
-  const codeBlocks = document.querySelectorAll('pre');
-  const clipboardIcons = document.querySelector('.clipboard-icons');
+  const codeBlocks = document.querySelectorAll("pre");
+  const clipboardIcons = document.querySelector(".clipboard-icons");
 
   // early return when copy assets does not exist
   if (!clipboardIcons) return;
@@ -74,16 +75,18 @@ function populateCopyButtons() {
 
   // generate buttons for each codeblock
   for (const block of codeBlocks) {
-
-    const button = document.createElement('button');
-    button.className = 'copy--on'
-    button.ariaLabel = 'copy'
+    const button = document.createElement("button");
+    button.className = "copy--on";
+    button.ariaLabel = "copy";
     button.innerHTML = copyIcon;
 
-    button.addEventListener('click', async () => await copyAction(block, button, copyIcon, checkIcon));
+    button.addEventListener(
+      "click",
+      async () => await copyAction(block, button, copyIcon, checkIcon),
+    );
 
-    const container = document.createElement('div');
-    container.className = 'codeblock';
+    const container = document.createElement("div");
+    container.className = "codeblock";
     container.appendChild(block.cloneNode(true));
     container.appendChild(button);
 
@@ -94,19 +97,19 @@ function populateCopyButtons() {
 async function copyAction(block, button, copyIcon, checkIcon) {
   await navigator.clipboard.writeText(block.textContent);
   button.innerHTML = checkIcon;
-  button.classList.add('copy--off');
+  button.classList.add("copy--off");
 
   const copyHandler = async () => {
     await copyAction(block, button, copyIcon, checkIcon);
-  }
+  };
 
-  button.removeEventListener('click', copyHandler);
+  button.removeEventListener("click", copyHandler);
 
   setTimeout(() => {
     button.innerHTML = copyIcon;
-    button.classList.remove('copy--off');
-    button.addEventListener('click', copyHandler);
-  },1500);
+    button.classList.remove("copy--off");
+    button.addEventListener("click", copyHandler);
+  }, 1500);
 }
 
 initThemeToggle();
