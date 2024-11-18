@@ -629,6 +629,26 @@ footer {
   }
 }
 
+.codeblock {
+  position: relative;
+}
+
+.copy {
+  &--on {
+    z-index: 1;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0.7em;
+    right: 0.6em;
+
+    border: none;
+    background: transparent;
+    color: var(--icon-color);
+    cursor: pointer;
+  }
+}
+
 // for line numbers
 code table td:nth-of-type(1) {
   text-align: right;
