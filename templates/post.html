@@ -6,6 +6,9 @@
 
 {% block head %}
   <link id="syntax-theme" rel="stylesheet" href="/syntax-theme-light.css" />
+  {% if page.extra.math %}
+    {% include "math.html" %}
+  {% endif %}
 {% endblock head %}
 
 {% block content %}
