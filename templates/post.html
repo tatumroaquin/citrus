@@ -64,6 +64,12 @@
   </main>
 </div>
 
+{% block script %}
+  {% if page.extra.mermaid %}
+    {% include "mermaid.html" %}
+  {% endif %}
+{% endblock script %}
+
 {% include "_footer.html" %}
 
 {% endblock content %}

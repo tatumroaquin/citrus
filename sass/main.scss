@@ -28,6 +28,9 @@ $mobile-width: 430px;
 
   --inline-code-color: green;
   --inline-code-bg: #eeffee;
+
+  --mermaid-background: transparent;
+  --mermaid-brightness: 100%;
 }
 
 .dark {
@@ -54,6 +57,9 @@ $mobile-width: 430px;
 
   --inline-code-color: orange;
   --inline-code-bg: #444;
+
+  --mermaid-background: white;
+  --mermaid-brightness: 70%;
 }
 
 // Typography
@@ -649,6 +655,11 @@ footer {
     color: var(--icon-color);
     cursor: pointer;
   }
+}
+
+.mermaid {
+  background: var(--mermaid-background);
+  filter: brightness(var(--mermaid-brightness));
 }
 
 // for line numbers

@@ -75,6 +75,10 @@ function populateCopyButtons() {
 
   // generate buttons for each codeblock
   for (const block of codeBlocks) {
+
+    // skip code blocks with mermaid class
+    if (block.classList.contains("mermaid")) continue;
+
     const button = document.createElement("button");
     button.className = "copy--on";
     button.ariaLabel = "copy";
