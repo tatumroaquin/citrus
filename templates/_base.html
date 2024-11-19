@@ -4,12 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ config.description }}">
+
     <title>
       {% block title %}
       {% endblock title %}
     </title>
+
+    {% include "_fonts.html" %}
     <link rel="icon" href="/icon/avatar.jpg">
     <link rel="stylesheet" href="/main.css">
+
     {% block head %}{% endblock head %}
   </head>
   <body>
