@@ -6,9 +6,6 @@
 
 {% block head %}
   <link id="syntax-theme" rel="stylesheet" href="/syntax-theme-light.css" />
-  {% if page.extra.math %}
-    {% include "math.html" %}
-  {% endif %}
 {% endblock head %}
 
 {% block content %}
@@ -65,6 +62,12 @@
 </div>
 
 {% block script %}
+  <script src="/js/lightense.min.js"></script>
+
+  {% if page.extra.math %}
+    {% include "math.html" %}
+  {% endif %}
+
   {% if page.extra.mermaid %}
     {% include "mermaid.html" %}
   {% endif %}
