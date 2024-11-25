@@ -71,7 +71,8 @@ $mobile-width: 430px;
   --header-height: 48px;
   --footer-height: 32px;
 
-  --main-font: "Fira Mono", Roboto, system-ui, sans-serif;
+  // --main-font: "Fira Mono", Roboto, system-ui, sans-serif;
+  --main-font: "Cantarell", Roboto, system-ui, sans-serif;
   --main-font-size: 16px;
 
   --header-font-size: 20px;
@@ -132,7 +133,6 @@ footer {
 
   display: flex;
   justify-content: space-between;
-  font-family: "Cantarell";
 
   @media (max-width: $content-width) {
     width: 100%;
@@ -163,6 +163,7 @@ footer {
 
   display: flex;
   flex-direction: column;
+
 
   &__title {
     text-align: center;
@@ -297,7 +298,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Cantarell";
 
   &__content {
     display: flex;
@@ -482,6 +482,10 @@ footer {
       display: block;
       max-width: 100%;
       margin: 0 auto;
+    }
+
+    ul,ol {
+      padding-left: 1.5em;
     }
 
     @media (max-width: $content-width) {
