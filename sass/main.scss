@@ -164,7 +164,6 @@ footer {
   display: flex;
   flex-direction: column;
 
-
   &__title {
     text-align: center;
     margin: 0.5em 0;
@@ -484,7 +483,8 @@ footer {
       margin: 0 auto;
     }
 
-    ul,ol {
+    ul,
+    ol {
       padding-left: 1.5em;
     }
 
@@ -672,6 +672,36 @@ footer {
   background: var(--mermaid-background);
   filter: brightness(var(--mermaid-brightness));
 }
+
+.footnote-definition {
+  display: flex;
+  line-height: 1.1em;
+
+  &-label {
+    font-size: 1em;
+    margin-right: 0.5em;
+    &::after {
+      content: ".";
+    }
+  }
+
+  .backlink {
+    border: none;
+    background-color: transparent;
+    color: var(--icon-color);
+    cursor: pointer;
+  }
+}
+
+.footnote-reference {
+  a {
+    color: var(--link-color);
+    &:hover {
+      color: var(--link-hover-color);
+    }
+  }
+}
+
 
 // for line numbers
 code table td:nth-of-type(1) {

@@ -116,6 +116,32 @@ async function copyAction(block, button, copyIcon, checkIcon) {
   }, 1500);
 }
 
+function initFootnoteBacklink() {
+  const footnotes = document.querySelectorAll('.footnote-definition');
+  const { backlinkIcon } = document.querySelector('.backlink-icon').dataset;
+
+  if (!footnotes) return;
+
+  for (const footnote of footnotes) {
+    // create backlink button
+    const button = document.createElement('button');
+    button.className = 'backlink';
+    button.ariaLabel = 'backlink';
+    button.innerHTML = backlinkIcon;
+
+    // when backlink is clicked scrollback to the footnote-reference
+    button.addEventListener('click', () => {
+      const cssSelector = `.footnote-reference a[href="#${footnote.id}"`;
+      const reference = document.querySelector(cssSelector);
+      reference.scrollIntoView();
+    });
+
+    // append before the footnote marker and after the footnote content
+    footnote.insertBefore(button, footnote.children[1]);
+  }
+}
+
 initThemeToggle();
 initImageZoom();
 populateCopyButtons();
+initFootnoteBacklink();

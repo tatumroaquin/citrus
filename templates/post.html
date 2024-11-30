@@ -20,6 +20,12 @@
     data-check-icon="{{ check_icon }}"
 ></div>
 
+{% set backlink_icon = load_data(path="static/icon/backlink.svg") %}
+
+<div class="backlink-icon" 
+  data-backlink-icon="{{ backlink_icon }}">
+</div>
+
 <div class="post">
   <main class="post__content">
     {% if page.extra.toc %}
