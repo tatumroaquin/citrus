@@ -6,7 +6,7 @@ $mobile-width: 430px;
 
 :root {
   --bg-color: white;
-  --text-color: black;
+  --text-color: rgb(70, 70, 70);
   --icon-color: green;
 
   --line-default-color: 1px solid gray;
@@ -33,11 +33,18 @@ $mobile-width: 430px;
   --mermaid-brightness: 100%;
 
   --blockquote-border-color: limegreen;
+
+  --callout-caution-color: rgb(173, 67, 67);
+  --callout-important-color: rgb(113, 83, 161);
+  --callout-note-color: rgb(73, 98, 147);
+  --callout-question-color: rgb(56, 100, 122);
+  --callout-tip-color: rgb(45, 117, 81);
+  --callout-warning-color: rgb(132, 95, 66);
 }
 
 .dark {
   --bg-color: #2b2a33;
-  --text-color: white;
+  --text-color: rgba(170, 170, 170, 1);
   --icon-color: orange;
 
   --line-default-color: 1px solid orange;
@@ -64,6 +71,13 @@ $mobile-width: 430px;
   --mermaid-brightness: 70%;
 
   --blockquote-border-color: orange;
+
+  --callout-caution-color: rgb(211, 105, 105);
+  --callout-important-color: rgb(151, 121, 199);
+  --callout-note-color: rgb(116, 142, 195);
+  --callout-question-color: rgb(94, 138, 160);
+  --callout-tip-color: rgb(83, 155, 119);
+  --callout-warning-color: rgb(170, 133, 104);
 }
 
 // Typography
@@ -702,6 +716,54 @@ footer {
   }
 }
 
+.callout {
+  display: flex;
+  padding: 0.5em;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    height: 1.7em;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0.7em;
+  }
+
+  &.note {
+    color: var(--callout-note-color);
+    border-color: var(--callout-note-color);
+  }
+
+  &.important {
+    color: var(--callout-important-color);
+    border-color: var(--callout-important-color);
+  }
+
+  &.warning {
+    color: var(--callout-warning-color);
+    border-color: var(--callout-warning-color);
+  }
+
+  &.caution {
+    color: var(--callout-caution-color);
+    border-color: var(--callout-caution-color);
+  }
+
+  &.question {
+    color: var(--callout-question-color);
+    border-color: var(--callout-question-color);
+  }
+
+  &.tip {
+    color: var(--callout-tip-color);
+    border-color: var(--callout-tip-color);
+  }
+}
 
 // for line numbers
 code table td:nth-of-type(1) {

@@ -1,0 +1,12 @@
+<blockquote class="callout important">
+	{% set icon = load_data(path="static/icon/important.svg") %}
+
+	<div class="callout__icon">{{ icon | safe }}</div>
+
+	<div class="callout__content">
+		{% if title %}
+		<p class="callout__title"><strong>{{ title }}</strong></p>
+		{% endif %} 
+		{{ body | markdown | safe }}
+	</div>
+</blockquote>
