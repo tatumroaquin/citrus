@@ -22,14 +22,14 @@
   {% if paginator.number_pagers > 1 %}
     <nav class="blog__pagination">
       {% if paginator.previous %}
-        <a class="blog__pagination-prev" href="{{ paginator.previous }}">&lt; prev</a>
+        <a class="blog__pagination-arrow" href="{{ paginator.previous }}">&lt; prev</a>
       {% else %}
-        <a class="blog__pagination-prev disabled" href="#">&lt; prev</a>
+        <a class="blog__pagination-arrow disabled" href="#">&lt; prev</a>
       {% endif %}
       {% if paginator.next %}
-        <a class="blog__pagination-next" href="{{ paginator.next }}">next &gt;</a>
+        <a class="blog__pagination-arrow" href="{{ paginator.next }}">next &gt;</a>
       {% else %}
-        <a class="blog__pagination-next disabled" href="#">next &gt;</a>
+        <a class="blog__pagination-arrow disabled" href="#">next &gt;</a>
       {% endif %}
     </nav>
   {% endif %}

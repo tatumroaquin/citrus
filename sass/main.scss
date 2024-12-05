@@ -24,7 +24,7 @@ $mobile-width: 430px;
   --toc-indicator-hidden-color: 3px solid transparent;
   --toc-indicator-hover-color: 3px solid green;
 
-  --disabled-color: gray;
+  --disabled-color: rgb(70, 70, 70);
 
   --inline-code-color: green;
   --inline-code-bg: #eeffee;
@@ -44,7 +44,7 @@ $mobile-width: 430px;
 
 .dark {
   --bg-color: #2b2a33;
-  --text-color: rgba(170, 170, 170, 1);
+  --text-color: rgb(170, 170, 170);
   --icon-color: orange;
 
   --line-default-color: 1px solid orange;
@@ -62,7 +62,7 @@ $mobile-width: 430px;
   --toc-indicator-hidden-color: 3px solid transparent;
   --toc-indicator-hover-color: 3px solid orange;
 
-  --disabled-color: gray;
+  --disabled-color: rgb(170, 170, 170);
 
   --inline-code-color: orange;
   --inline-code-bg: #444;
@@ -116,7 +116,7 @@ html {
 
 body {
   background: var(--bg-color);
-  height: 100svh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   font-family: var(--main-font);
@@ -164,7 +164,7 @@ footer {
 
 .disabled {
   pointer-events: none;
-  color: var(--disabled-color);
+  color: var(--disabled-color) !important;
 }
 
 .blog {
@@ -206,6 +206,13 @@ footer {
   &__pagination {
     display: flex;
     justify-content: space-between;
+
+    &-arrow {
+      color: var(--link-color);
+      &:hover {
+        color: var(--link-hover-color);
+      }
+    }
   }
 
   @media (max-width: $content-width) {
