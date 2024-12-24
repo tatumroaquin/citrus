@@ -2,7 +2,7 @@ function toggleToc() {
   const tocElement = document.querySelector(".post-toc");
   tocElement.classList.toggle("show");
 
-  const tocToggler = document.querySelector(".toc-toggler");
+  const tocToggler = document.querySelector(".top-nav__toc-toggle");
   tocToggler.classList.toggle("active");
 }
 
@@ -142,6 +142,8 @@ function initFootnoteBacklink() {
 }
 
 initThemeToggle();
-initImageZoom();
-populateCopyButtons();
-initFootnoteBacklink();
+if (document.querySelector('.post')) {
+	initImageZoom();
+	populateCopyButtons();
+	initFootnoteBacklink();
+}
