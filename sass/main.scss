@@ -761,6 +761,33 @@ footer {
   }
 }
 
+.quote {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: none;
+  &__left {
+    height: 100%;
+    align-self: flex-start;
+    line-height: 0;
+  }
+  &__right {
+    align-self: flex-end;
+    line-height: 0;
+  }
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__text {
+    padding: 0 0.7em;
+  }
+  &__from {
+    align-self: center;
+  }
+}
+
 // for line numbers
 code table td:nth-of-type(1) {
   text-align: right;

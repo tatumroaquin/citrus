@@ -1,4 +1,16 @@
-<blockquote>
-  {{ body | markdown | safe}}
-  -- <strong><i>{{ author }}</i></strong>
+<blockquote class="quote">
+  {% set lquote = load_data(path="static/icon/quote-left.svg") %}
+  {% set rquote = load_data(path="static/icon/quote-right.svg") %}
+
+  <div class="quote__body">
+    <div class="quote__left">{{ lquote | safe }}</div>
+    <div class="quote__text">
+      {{ body | markdown | safe}}
+    </div>
+    <div class="quote__right">{{ rquote | safe }}</div>
+  </div>
+
+  {% if author %}
+  <strong class="quote__from"><i>-- {{ author }}</i></strong>
+  {% endif %}
 </blockquote>
