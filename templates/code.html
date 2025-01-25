@@ -9,6 +9,9 @@
 {% include "_header.html" %}
 <div class="projects">
   <main class="projects__content">
+    {% if section.extra.heading %}
+      <h2 class="blog__title">{{ section.extra.heading }}</h2>
+    {% endif %}
     {% set data = load_data(path="content" ~ section.path ~ "data.toml", format="toml") %}
     {% for project in data.project %}
       <div class="projects__card">
