@@ -1,9 +1,9 @@
 # The URL the site will be built for
-base_url = "https://blog.tatumroaquin.dev"
+base_url = "<your domain>"
 
 # The site title and description; used in feeds by default.
-title = "Tatum's Blog"
-description = "Computer Science Knowledge Base"
+title = "<your h1 title>"
+description = "<your site description>"
 
 # The default language; used in feeds.
 default_language = "en"
@@ -14,7 +14,7 @@ compile_sass = true
 minify_html = false
 
 # The default author for pages
-author = "Tatum Roaquin"
+author = "<your name>"
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
@@ -38,19 +38,23 @@ taxonomies = "on"
 anchors = "on"
 
 [extra]
-id = "tatumroaquin"
+id = "<your alias/username>"
 
-bio = "Answers always precede questions"
+bio = "<your personal bio or quote>"
 
+# Example sections for top navigation
 sections = [
   { name = "blog", path = "/blog" },
+  { name = "ctfs", path = "/ctfs" },
   { name = "code", path = "/code" },
   { name = "tags", path = "/tags" },
 ]
 
 socials = [
-  { name = "GitHub", icon = "github.svg", url = "https://github.com/tatumroaquin" },
-  { name = "Leetcode", icon = "leetcode.svg", url = "https://leetcode.com/u/tatumroaquin" },
-  { name = "LinkedIn", icon = "linkedin.svg", url = "https://www.linkedin.com/in/tatumroaquin" },
-  { name = "Frontend Mentor", icon = "frontend-mentor.svg", url = "https://www.frontendmentor.io/profile/tatumroaquin" },
+  { name = "GitHub", icon = "github.svg", url = "https://github.com/<your github username>" },
+  { name = "Leetcode", icon = "leetcode.svg", url = "https://leetcode.com/u/<your leetcode username>" },
+  { name = "LinkedIn", icon = "linkedin.svg", url = "https://www.linkedin.com/in/<your linkedin profile>" },
+  { name = "Frontend Mentor", icon = "frontend-mentor.svg", url = "https://www.frontendmentor.io/profile/<your fem username>" },
 ]
+
+footer_copyright = "<your copyright message>"

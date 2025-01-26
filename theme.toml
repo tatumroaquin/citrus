@@ -1,0 +1,12 @@
+name = "citrus"
+description = "Zesty theme for zola, inspired and based on serene"
+
+# tags = []
+license = "Unlicense"
+homepage = "https://github.com/tatumroaquin/citrus"
+min_version = "0.19.2"
+# demo = ""
+
+[author]
+name = "Tatum Roaquin"
+homepage = "https://tatumroaquin.dev"
