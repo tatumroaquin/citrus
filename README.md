@@ -11,3 +11,4 @@ Simple and zesty, minimalistic theme for [zola](https://www.getzola.org/), inspi
 * Math writing support using [KaTeX](https://katex.org/)
 * Diagram and charting support with [Mermaid.js](https://mermaid.js.org/)
 * GitHub style callouts (note, tip, important, warning, caution, question)
+* Search engine support using [Fuse.js](https://www.fusejs.io/)
