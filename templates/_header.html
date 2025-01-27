@@ -24,9 +24,9 @@
     </nav>
 
     <div class="top-nav__controls">
-      {% set sun_icon  = load_data(path="static/icon/sun.svg") %}
-      {% set moon_icon = load_data(path="static/icon/moon.svg") %}
-      {% set find_icon = load_data(path="static/icon/find.svg") %}
+      {% set sun_icon  = asset::get_icon(file="sun.svg") %}
+      {% set moon_icon = asset::get_icon(file="moon.svg") %}
+      {% set find_icon = asset::get_icon(file="find.svg") %}
 
       <a
         id="find-button"

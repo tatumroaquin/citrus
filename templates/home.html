@@ -1,5 +1,7 @@
 {% extends "_base.html" %}
 
+{% import "macros/get-icon.html" as asset %}
+
 {% block title %}{{ section.title }}{% endblock title %}
 
 {% block content %}
@@ -26,13 +28,13 @@
     <div class="home-nav__social">
       {% set socials = config.extra.socials %}
       {% for social in socials %}
-      {% set social_icon = load_data(path="static/icon/" ~ social.icon) %}
+      {% set social_icon = asset::get_icon(file=social.icon) %}
       <a class="home-nav__social-icon" href="{{ social.url }}" target="_blank" rel="noreferrer noopener">
         {{ social_icon | safe }}
       </a>
       {% endfor %}
-      {% set moon_icon = load_data(path="static/icon/moon.svg") %}
-      {% set sun_icon = load_data(path="static/icon/sun.svg") %}
+      {% set moon_icon = asset::get_icon(file="moon.svg") %}
+      {% set sun_icon = asset::get_icon(file="sun.svg") %}
     </div>
     <button 
       id="theme-toggle"

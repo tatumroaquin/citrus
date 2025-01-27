@@ -1,6 +1,7 @@
 {% extends "_base.html" %}
 
-{% import "macros/toc-list.html" as macros %}
+{% import "macros/toc-list.html" as html %}
+{% import "macros/get-icon.html" as asset %}
 
 {% block title %}{{ page.title }}{% endblock title %}
 
@@ -12,15 +13,15 @@
 
 {% include "_header.html" %}
 
-{% set copy_icon  = load_data(path="static/icon/copy.svg") %}
-{% set check_icon = load_data(path="static/icon/check.svg") %}
+{% set copy_icon  = asset::get_icon(file="copy.svg") %}
+{% set check_icon = asset::get_icon(file="check.svg") %}
 
 <div class='clipboard-icons'
     data-copy-icon="{{ copy_icon }}"
     data-check-icon="{{ check_icon }}"
 ></div>
 
-{% set backlink_icon = load_data(path="static/icon/backlink.svg") %}
+{% set backlink_icon = asset::get_icon(file="backlink.svg") %}
 
 <div class="backlink-icon" 
   data-backlink-icon="{{ backlink_icon }}">
@@ -30,7 +31,7 @@
   <main class="post__content">
     {% if page.extra.toc %}
       <aside class="post-toc">
-        {{ macros::toc_list(toc=page.toc) }}
+        {{ html::toc_list(toc=page.toc) }}
       </aside>
     {% endif %}
     <article class="post__article">
