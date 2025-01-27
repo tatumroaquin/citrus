@@ -3,7 +3,7 @@
   <div class="footer__socials">
     {% set socials = config.extra.socials %}
     {% for social in socials %}
-    {% set social_icon = load_data(path="static/icon/" ~ social.icon) %}
+    {% set social_icon = asset::get_icon(file=social.icon) %}
     <a class="footer__socials-icon" href="{{ social.url }}" target="_blank" rel="noreferrer noopener">
       {{ social_icon | safe }}
     </a>
