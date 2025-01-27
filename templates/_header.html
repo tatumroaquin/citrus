@@ -8,7 +8,7 @@
       <span>::</span>
       <span>[</span>
       <ul class="top-nav__list">
-        {% set sections = config.extra.sections %}
+        {% set sections = config.extra.sections | slice(end=-1) %}
         {% for section in sections %}
           <li class="top-nav__item">
             <a class="top-nav__link" href="{{ section.path }}">
@@ -26,6 +26,15 @@
     <div class="top-nav__controls">
       {% set sun_icon  = load_data(path="static/icon/sun.svg") %}
       {% set moon_icon = load_data(path="static/icon/moon.svg") %}
+      {% set find_icon = load_data(path="static/icon/find.svg") %}
+
+      <a
+        id="find-button"
+        class="top-nav__find-button"
+        href={{ config.extra.sections | last | get(key="path") }}
+      >
+        {{ find_icon | safe }}
+      </a>
 
       <button 
         id="theme-toggle"
