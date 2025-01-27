@@ -1,0 +1,9 @@
+{% macro get_icon(file) %}
+
+  {% if config.extra.developer %}
+    {{ load_data(path='static/icon/' ~ file) }}
+  {% else %}
+    {{ load_data(path='themes/citrus/static/icon/' ~ file) }}
+  {% endif %}
+
+{% endmacro %}
