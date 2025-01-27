@@ -865,6 +865,35 @@ footer {
   }
 }
 
+._404 {
+  width: $content-width;
+
+  // margin-top: calc(var(--header-height) + 7em);
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+
+  &__heading {
+    line-height: 1em;
+    font-size: 7em;
+  }
+
+  &__subheading {
+    line-height: 1em;
+    font-size: 3em;
+  }
+
+  @media (max-width: $content-width) {
+    width: 100%;
+    padding: 0 1em;
+  }
+}
+
 // for line numbers
 code table td:nth-of-type(1) {
   text-align: right;
