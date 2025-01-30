@@ -5,8 +5,8 @@
       <a class="top-nav__brand" href="/">
         <img class="top-nav__brand-img" src="/icon/avatar.jpg"/>
       </a>
-      <span>::</span>
-      <span>[</span>
+      <span class="top-nav__brackets">::</span>
+      <span class="top-nav__brackets">[</span>
       <ul class="top-nav__list">
         {% set sections = config.extra.sections | slice(end=-1) %}
         {% for section in sections %}
@@ -20,7 +20,7 @@
           {% endif %}
         {% endfor %}
       </ul>
-      <span>]</span>
+      <span class="top-nav__brackets">]</span>
     </nav>
 
     <div class="top-nav__controls">
