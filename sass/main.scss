@@ -601,6 +601,14 @@ footer {
       padding-left: 1.5em;
     }
 
+    & > table {
+      border-collapse: collapse;
+      th, td {
+        padding: 0 0.7em;
+        border: var(--line-default-color);
+      }
+    }
+
     @media (max-width: $content-width) {
       padding: 0 1em;
     }
