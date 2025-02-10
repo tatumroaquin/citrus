@@ -103,16 +103,12 @@ async function copyAction(block, button, copyIcon, checkIcon) {
   button.innerHTML = checkIcon;
   button.classList.add("copy--off");
 
-  const copyHandler = async () => {
-    await copyAction(block, button, copyIcon, checkIcon);
-  };
-
-  button.removeEventListener("click", copyHandler);
+  button.disabled = true;
 
   setTimeout(() => {
     button.innerHTML = copyIcon;
     button.classList.remove("copy--off");
-    button.addEventListener("click", copyHandler);
+    button.disabled = false;
   }, 1500);
 }
 
