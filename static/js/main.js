@@ -80,7 +80,7 @@ function populateCopyButtons() {
     if (block.classList.contains("mermaid")) continue;
 
     const button = document.createElement("button");
-    button.className = "copy--on";
+    button.className = "copy";
     button.ariaLabel = "copy";
     button.innerHTML = copyIcon;
 

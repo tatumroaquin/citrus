@@ -761,21 +761,29 @@ footer {
   font-size: 14px;
   line-height: 1.4em;
   overflow-wrap: anywhere;
+
+  &:hover {
+    .copy {
+      visibility: visible;
+    }
+  }
 }
 
 .copy {
-  &--on {
-    z-index: 1;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    top: 0.7em;
-    right: 0.6em;
+  visibility: hidden;
+  z-index: 1;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 0.7em;
+  right: 0.6em;
 
-    border: none;
-    background: transparent;
-    color: var(--icon-color);
-    cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--icon-color);
+  cursor: pointer;
+  &--off {
+    visibility: visible;
   }
 }
 
