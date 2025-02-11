@@ -28,6 +28,7 @@
       {% set moon_icon = asset::get_icon(file="moon.svg") %}
       {% set find_icon = asset::get_icon(file="find.svg") %}
 
+      {% if config.extra.search %}
       <a
         id="find-button"
         class="top-nav__find-button"
@@ -35,6 +36,7 @@
       >
         {{ find_icon | safe }}
       </a>
+      {% endif %}
 
       <button 
         id="theme-toggle"
