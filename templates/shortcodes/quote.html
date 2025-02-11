@@ -1,6 +1,7 @@
+{% import "macros/get-icon.html" as asset %}
 <blockquote class="quote">
-  {% set lquote = load_data(path="static/icon/quote-left.svg") %}
-  {% set rquote = load_data(path="static/icon/quote-right.svg") %}
+  {% set lquote = asset::get_icon(file="quote-left.svg") %}
+  {% set rquote = asset::get_icon(file="quote-right.svg") %}
 
   <div class="quote__body">
     <div class="quote__left">{{ lquote | safe }}</div>

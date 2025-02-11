@@ -1,5 +1,6 @@
+{% import "macros/get-icon.html" as asset %}
 <blockquote class="callout warning">
-	{% set icon = load_data(path="static/icon/warning.svg") %}
+	{% set icon = asset::get_icon(file="warning.svg") %}
 
 	<div class="callout__icon">{{ icon | safe }}</div>
 

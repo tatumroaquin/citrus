@@ -48,7 +48,7 @@
       </button>
 
       {% if page.extra.toc and page %}
-        {% set toc_icon = load_data(path="static/icon/toc.svg") %}
+        {% set toc_icon = asset::get_icon(file="toc.svg") %}
         <button class="top-nav__toc-toggle" onclick="toggleToc()">
           {{ toc_icon | safe }}
         </button>
