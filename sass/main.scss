@@ -612,6 +612,7 @@ footer {
     }
 
     p > a {
+      color: var(--link-color);
       &:visited {
         color: var(--link-visited-color);
       }
@@ -795,10 +796,12 @@ footer {
 .footnote-definition {
   display: flex;
   line-height: 1.1em;
+  align-items: center;
 
   &-label {
     font-size: 1em;
     margin-right: 0.5em;
+    min-width: 3ch;
     &::after {
       content: ".";
     }
