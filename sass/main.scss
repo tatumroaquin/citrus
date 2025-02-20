@@ -28,7 +28,7 @@ $mobile-width: 430px;
   --disabled-color: rgb(70, 70, 70);
 
   --inline-code-color: green;
-  --inline-code-bg: #eeffee;
+  --inline-code-bg: #ccffcc;
 
   --mermaid-background: transparent;
   --mermaid-brightness: 100%;
@@ -1086,4 +1086,10 @@ figcaption {
 
 del {
   text-decoration-line: line-through;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  overflow-wrap: break-word;
 }
