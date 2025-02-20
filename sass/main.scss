@@ -863,11 +863,15 @@ footer {
   display: flex;
   line-height: 1.1em;
   align-items: center;
+  width: 100%;
+  overflow-wrap: anywhere;
 
   &-label {
     font-size: 1em;
     margin-right: 0.5em;
     min-width: 3ch;
+    overflow-wrap: break-word;
+    flex-shrink: 1;
 
     &::after {
       content: ".";
