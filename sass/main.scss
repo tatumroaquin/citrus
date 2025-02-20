@@ -41,6 +41,9 @@ $mobile-width: 430px;
   --callout-question-color: rgb(56, 100, 122);
   --callout-tip-color: rgb(45, 117, 81);
   --callout-warning-color: rgb(132, 95, 66);
+
+  --codebox-color: rgb(60, 60, 60);
+  --codebox-bg: ##fafafa;
 }
 
 .dark {
@@ -80,6 +83,9 @@ $mobile-width: 430px;
   --callout-question-color: rgb(94, 138, 160);
   --callout-tip-color: rgb(83, 155, 119);
   --callout-warning-color: rgb(170, 133, 104);
+
+  --codebox-color: rgb(230, 230, 230);
+  --codebox-bg: #444;
 }
 
 // Typography
@@ -762,8 +768,66 @@ footer {
   font-size: 14px;
   line-height: 1.4em;
   overflow-wrap: anywhere;
+  border: var(--line-default-color);
 
   &:hover {
+    .copy {
+      visibility: visible;
+    }
+  }
+
+  // make visual highlight take full width
+  & code {
+    display: block;
+    overflow-wrap: anywhere;
+    & table {
+      width: 100%;
+    }
+  }
+
+  // for line numbers
+  & table td:nth-of-type(1) {
+    text-align: right;
+    user-select: none;
+    padding-right: 0.5em;
+    width: 3ch;
+  }
+
+  & mark {
+    display: block;
+    color: inherit;
+    background-color: var(--inline-code-bg);
+  }
+}
+
+.codebox {
+  position: relative;
+
+  .filename {
+    color: var(--codebox-color);
+    background: var(--codebox-bg);
+
+    border-top: var(--line-default-color);
+    border-left: var(--line-default-color);
+    border-right: var(--line-default-color);
+
+    padding: 0.4em 0.7em;
+
+    font-family: "Fira Mono";
+    font-size: 14px;
+    line-height: 1.4em;
+
+    overflow-wrap: anywhere;
+    z-index: 1;
+  }
+
+  .copy {
+    top: -1.75em;
+    right: 0.4em;
+  }
+
+  &:hover,
+  &:active {
     .copy {
       visibility: visible;
     }
@@ -772,17 +836,18 @@ footer {
 
 .copy {
   visibility: hidden;
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   width: 24px;
   height: 24px;
-  top: 0.7em;
-  right: 0.6em;
+  top: 0.4em;
+  right: 0.4em;
 
   border: none;
   background: transparent;
   color: var(--icon-color);
   cursor: pointer;
+
   &--off {
     visibility: visible;
   }
@@ -802,6 +867,7 @@ footer {
     font-size: 1em;
     margin-right: 0.5em;
     min-width: 3ch;
+
     &::after {
       content: ".";
     }
@@ -929,30 +995,14 @@ footer {
   }
 }
 
-// for line numbers
-code table td:nth-of-type(1) {
-  text-align: right;
-  user-select: none;
-  padding-right: 0.5em;
-  mark::before {
-    width: calc(100% + 1em);
-  }
-}
-
 pre {
   background: var(--bg-color);
   text-wrap: wrap;
   padding: 0.7em;
 
   &[data-linenos] {
-    padding-right: 12px 48px 12px 8px;
+    padding-right: 12px;
   }
-}
-
-pre > code > mark::before {
-  background: orange;
-  width: calc(100% + 48px + 16px);
-  left: -16px;
 }
 
 p > code,
