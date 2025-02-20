@@ -206,6 +206,7 @@ footer {
     display: flex;
     justify-content: space-between;
     border-bottom: var(--line-hidden-color);
+
     &:hover {
       color: var(--link-hover-color);
       border-bottom: var(--line-hover-color);
@@ -218,6 +219,7 @@ footer {
 
     &-arrow {
       color: var(--link-color);
+
       &:hover {
         color: var(--link-hover-color);
       }
@@ -252,6 +254,7 @@ footer {
     border: none;
     border-bottom: var(--line-default-color);
     font-size: var(--main-font-size);
+
     &:focus {
       outline: none;
     }
@@ -275,6 +278,7 @@ footer {
     display: flex;
     justify-content: space-between;
     border-bottom: var(--line-hidden-color);
+
     &:hover {
       color: var(--link-hover-color);
       border-bottom: var(--line-hover-color);
@@ -286,6 +290,7 @@ footer {
     padding: 0 1em;
   }
 }
+
 .home {
   border: var(--line-default-color);
   border-radius: 10px;
@@ -359,6 +364,7 @@ footer {
       display: flex;
       align-items: center;
       color: var(--icon-color);
+
       svg {
         width: var(--icon-size);
         height: var(--icon-size);
@@ -370,6 +376,7 @@ footer {
       border: none;
       display: flex;
       color: var(--icon-color);
+
       svg {
         width: var(--icon-size);
         height: var(--icon-size);
@@ -396,9 +403,11 @@ footer {
     display: flex;
     align-items: center;
     color: var(--text-color);
+
     &:hover {
       color: var(--link-hover-color);
     }
+
     &-img {
       border: var(--line-default-color);
       border-radius: 100%;
@@ -414,6 +423,7 @@ footer {
 
   &__link {
     color: var(--text-color);
+
     &:hover {
       color: var(--link-hover-color);
     }
@@ -561,6 +571,7 @@ footer {
       padding-left: 0.3em;
       border-left: var(--toc-indicator-hidden-color);
       color: var(--toc-link-color);
+
       &:hover {
         border-left: var(--toc-indicator-hover-color);
         color: var(--toc-link-hover-color);
@@ -582,6 +593,7 @@ footer {
       visibility: hidden;
       margin-left: 0.5em;
       color: var(--toc-link-color);
+
       &:hover {
         color: var(--toc-link-hover-color);
       }
@@ -612,7 +624,9 @@ footer {
 
     & > table {
       border-collapse: collapse;
-      th, td {
+
+      th,
+      td {
         padding: 0 0.7em;
         border: var(--line-default-color);
       }
@@ -620,9 +634,11 @@ footer {
 
     p > a {
       color: var(--link-color);
+
       &:visited {
         color: var(--link-visited-color);
       }
+
       &:hover {
         color: var(--link-hover-color);
       }
@@ -648,8 +664,10 @@ footer {
 
   &__tags {
     margin-left: auto;
+
     &-link {
       color: var(--tag-color);
+
       &:hover {
         color: var(--tag-hover-color);
       }
@@ -665,9 +683,11 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: var(--header-height);
+
   &__content {
     width: $content-width;
   }
+
   &__card {
     border: var(--line-default-color);
     border-radius: 10px;
@@ -681,30 +701,36 @@ footer {
       margin: 1em 1em;
     }
   }
+
   &__info {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
   }
+
   &__meta {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
   &__tags {
     color: var(--tag-color);
     list-style: none;
     display: flex;
     gap: 0.5em;
   }
+
   &__links {
     list-style: none;
     display: flex;
     gap: 0.5em;
   }
+
   &__link {
     color: var(--link-color);
     border-bottom: var(--line-default-color);
+
     &:hover {
       color: var(--link-hover-color);
     }
@@ -739,6 +765,7 @@ footer {
     color: var(--tag-color);
     margin: 0.5em;
     border-bottom: var(--line-hidden-color);
+
     &:hover {
       color: var(--tag-hover-color);
       border-bottom: var(--line-hover-color);
@@ -755,6 +782,7 @@ footer {
 
     &-icon {
       color: var(--icon-color);
+
       svg {
         width: var(--icon-size);
         height: var(--icon-size);
@@ -889,6 +917,7 @@ footer {
 .footnote-reference {
   a {
     color: var(--link-color);
+
     &:hover {
       color: var(--link-hover-color);
     }
@@ -949,23 +978,28 @@ footer {
   flex-direction: column;
   padding: 0;
   border: none;
+
   &__left {
     height: 100%;
     align-self: flex-start;
     line-height: 0;
   }
+
   &__right {
     align-self: flex-end;
     line-height: 0;
   }
+
   &__body {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   &__text {
     padding: 0 0.7em;
   }
+
   &__from {
     align-self: center;
   }
