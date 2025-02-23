@@ -372,6 +372,7 @@ footer {
     }
 
     &__theme-toggle {
+      all: unset;
       background: transparent;
       border: none;
       display: flex;
