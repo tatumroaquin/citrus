@@ -17,8 +17,8 @@
     {% for page in paginator.pages %}
       <li class="blog__item">
         <a class="blog__link" href="{{ page.permalink }}">
-          <span>{{ page.title }}</span>
-          <span>{{ page.date }}</span>
+          <span class="blog__link-title">{{ page.title }}</span>
+          <span class="blog__link-date">{{ page.date }}</span>
         </a>
       </li>
     {% endfor %}

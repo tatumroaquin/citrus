@@ -204,12 +204,25 @@ footer {
   &__link {
     color: var(--link-color);
     display: flex;
+    gap: 2em;
     justify-content: space-between;
     border-bottom: var(--line-hidden-color);
 
     &:hover {
       color: var(--link-hover-color);
       border-bottom: var(--line-hover-color);
+    }
+
+    &-title {
+      line-height: 1.2em;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &-date {
+      text-wrap: nowrap;
+      display: inline-flex;
+      align-items: center;
     }
   }
 
