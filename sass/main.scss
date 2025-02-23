@@ -147,22 +147,6 @@ header {
   backdrop-filter: blur(10px);
 }
 
-footer {
-  width: $content-width;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0.5em 0;
-
-  display: flex;
-  justify-content: space-between;
-
-  @media (max-width: $content-width) {
-    width: 100%;
-    padding: 0.5em 1em;
-  }
-}
-
 .hide {
   display: none !important;
 }
@@ -788,19 +772,49 @@ footer {
 }
 
 .footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: $content-width;
+
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+
   &__socials {
     display: flex;
     gap: 0.5em;
     align-items: center;
-    margin-left: auto;
 
     &-icon {
       color: var(--icon-color);
+      display: inline-flex;
+      align-items: center;
 
-      svg {
+      & svg {
         width: var(--icon-size);
         height: var(--icon-size);
       }
+    }
+  }
+
+  @media (max-width: $content-width) {
+    width: 100%;
+    padding: 0.5em 1em;
+  }
+
+  @media (max-width: $mobile-width) {
+    &__copyright {
+      width: 100%;
+      text-align: center;
+    }
+    &__socials {
+      width: 100%;
+      justify-content: center;
     }
   }
 }
