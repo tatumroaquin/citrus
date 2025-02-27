@@ -92,7 +92,16 @@ function populateCopyButtons() {
     const container = document.createElement("div");
     container.className = "codeblock";
     container.appendChild(block.cloneNode(true));
-    container.appendChild(button);
+
+    const codeBox = block.closest('.codebox');
+    // is the code block inside a codebox shortcode?
+    // append the button inside the filename div instead.
+    if (codeBox) {
+      const filenameDiv = codeBox.querySelector('.codebox__filename');
+      filenameDiv.appendChild(button);
+    } else {
+      container.appendChild(button);
+    }
 
     block.replaceWith(container);
   }

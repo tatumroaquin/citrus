@@ -858,9 +858,8 @@ header {
 }
 
 .codebox {
-  position: relative;
-
-  .filename {
+  &__filename {
+    position: relative;
     color: var(--codebox-color);
     background: var(--codebox-bg);
 
@@ -878,11 +877,6 @@ header {
     z-index: 1;
   }
 
-  .copy {
-    top: -1.75em;
-    right: 0.4em;
-  }
-
   &:hover,
   &:active {
     .copy {
@@ -892,6 +886,7 @@ header {
 }
 
 .copy {
+  all: unset;
   visibility: hidden;
   z-index: 2;
   position: absolute;
