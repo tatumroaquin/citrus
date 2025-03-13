@@ -630,7 +630,7 @@ header {
       }
     }
 
-    p > a {
+    & a {
       color: var(--link-color);
 
       &:visited {
